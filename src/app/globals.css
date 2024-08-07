@@ -2,29 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  :root {
+    --patchwork-red-100: #ffcfc9;
+    --patchwork-red-200: #ffaaa0;
+    --patchwork-red-300: #ff8578;
+    --patchwork-red-400: #ff614f;
+    --patchwork-red-500: #ff3c26;
+    --patchwork-red-600: #ed1800;
+    --patchwork-red-700: #b51200;
 
-@media (prefers-color-scheme: dark) {
+    --patchwork-purple-300: #e395f6;
+    --patchwork-purple-400: #d970f3;
+    --patchwork-purple-500: #cf4af0;
+    --patchwork-purple-600: #c116ec;
+    --patchwork-purple-700: #980fba;
+
+    --patchwork-blue-100: #d1eaf9;
+    --patchwork-blue-200: #acd9f5;
+    --patchwork-blue-300: #88c8f1;
+    --patchwork-blue-400: #63b8ec;
+    --patchwork-blue-500: #3fa7e8;
+    --patchwork-blue-600: #1a8dd5;
+    --patchwork-blue-700: #146ca3;
+
+    --patchwork-green-100: #d5f9e1;
+    --patchwork-green-200: #b1f5c7;
+    --patchwork-green-300: #8df0ad;
+    --patchwork-green-400: #69eb94;
+    --patchwork-green-500: #45e67a;
+    --patchwork-green-600: #1dd65a;
+    --patchwork-green-700: #16a545;
+
+    --patchwork-yellow-100: #fff8de;
+    --patchwork-yellow-200: #ffefb5;
+    --patchwork-yellow-300: #ffe68d;
+    --patchwork-yellow-400: #ffde64;
+    --patchwork-yellow-500: #ffd53b;
+    --patchwork-yellow-600: #ffc903;
+    --patchwork-yellow-700: #ca9f00;
+
+    --patchwork-black-50: #83939e;
+    --patchwork-black-100: #778a95;
+    --patchwork-black-200: #647580;
+    --patchwork-black-300: #526069;
+    --patchwork-black-400: #404b52;
+    --patchwork-black-500: #2e363b;
+    --patchwork-black-600: #15191b;
+    --patchwork-black-700: #000000;
+
+    --patchwork-neutral-400: #ffffff;
+    --patchwork-neutral-500: #f7f7f7;
+    --patchwork-neutral-700: #7b7b7b;
+    --patchwork-neutral-800: #383838;
+    --patchwork-neutral-900: #1d1d1b;
+
+    --patchwork-white-900: #ffffff;
+
+    /* ... */
+  }
+}
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+} */
 
 @layer utilities {
   .text-balance {
