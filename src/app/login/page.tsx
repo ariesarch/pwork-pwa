@@ -15,9 +15,14 @@ import { Button } from "@/components/atoms/Button";
 import { LoginInputType, loginFormSchema } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useLogin } from "@/hooks/useLogin";
+import { Loader2 } from "lucide-react";
 
-const defaultValues = {
+const emailDefaultValues = {
   email: "",
+  password: "",
+};
+const phonedefaultValues = {
   phone: "",
   password: "",
 };
@@ -27,6 +32,8 @@ const Login = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
+  const { mutate, isPending } = useLogin();
+
   const {
     register,
     handleSubmit,
@@ -34,11 +41,11 @@ const Login = () => {
     formState: { errors },
   } = useForm<LoginInputType>({
     resolver: zodResolver(loginFormSchema),
-    defaultValues,
+    defaultValues: emailDefaultValues,
   });
 
-  function onSubmit({ email, phone, password }: LoginInputType) {
-    // console.log("login:", email, phone, password);
+  function onSubmitWithEmail({ email, password }: LoginInputType) {
+    mutate({ username: email, password: password });
   }
   return (
     <MainLayout className="bg-patchwork_black-500 h-screen text-patchwork_white-900">
@@ -47,7 +54,8 @@ const Login = () => {
         <h3>Login</h3>
         <div></div>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+
+      <form onSubmit={handleSubmit(onSubmitWithEmail)}>
         <Tabs defaultValue={activeTab} onValueChange={setActiveTab}>
           <TabsList className="flex items-center justify-between bg-patchwork_black-400 border border-patchwork_black-300 rounded-lg mb-8">
             <TabsTrigger
@@ -84,7 +92,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </TabsContent>
-          <TabsContent value="phone">
+          {/* <TabsContent value="phone">
             <Input
               type="number"
               {...register("phone")}
@@ -102,13 +110,21 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-          </TabsContent>
+          </TabsContent> */}
         </Tabs>
-        <p className="w-full flex justify-end text-base mr-auto cursor-pointer hover:text-patchwork_black-100">
+        <p
+          className="w-full flex justify-end text-base mr-auto cursor-pointer hover:text-patchwork_black-100"
+          onClick={() => {}}
+        >
           Forgot your password?
         </p>
-        <Button className="mt-4" type="submit">
-          Log in
+        <Button
+          className="mt-4 flex items-center justify-center"
+          type="submit"
+          disabled={isPending}
+        >
+          {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Log
+          in
         </Button>
       </form>
     </MainLayout>
