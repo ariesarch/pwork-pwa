@@ -1,17 +1,18 @@
 import axios, { InternalAxiosRequestConfig } from "axios";
-import { backendURL, clientAccessToken, clientSecretToken } from "./baseURL";
+import { backendURL, clientAccessToken } from "./baseURL";
 
 const axiosInstance = axios.create({
-	baseURL: backendURL,
+  baseURL: backendURL,
 });
 
 const setAuthHeader = (config: InternalAxiosRequestConfig) => {
-	const token = localStorage.getItem("pathchwork");
-	if (config.headers) {
-		config.headers["Authorization"] = `Bearer ${token || clientAccessToken}`;
-	}
+  const token = localStorage.getItem("---nmat---");
 
-	return config;
+  if (config.headers) {
+    config.headers["Authorization"] = `Bearer ${token || clientAccessToken}`;
+  }
+
+  return config;
 };
 
 axiosInstance.interceptors.request.use(setAuthHeader);

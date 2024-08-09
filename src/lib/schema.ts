@@ -5,8 +5,8 @@ export const loginFormSchema = z.object({
   password: z
     .string()
     .min(8, { message: "Password must be at least 8 characters" }),
-  phone: z.string().min(2, {
-    message: "Phone is required",
-  }),
+  // phone: z.string().min(2, {
+  //   message: "Phone is required",
+  // }),
 });
 export type LoginInputType = z.infer<typeof loginFormSchema>;

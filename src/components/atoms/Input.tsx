@@ -17,10 +17,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
+          autoComplete="username"
           {...props}
         />
         {error && (
-          <p className="my-1 text-sm text-patchwork_red-500">{error}</p>
+          <span className="my-1 text-sm text-patchwork_red-500">{error}</span>
         )}
       </div>
     );
