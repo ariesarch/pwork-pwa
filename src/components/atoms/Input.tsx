@@ -1,15 +1,22 @@
 import * as React from "react";
+import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
+  isSearch?: boolean;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, error, ...props }, ref) => {
+  ({ className, type, error, isSearch, ...props }, ref) => {
     return (
-      <div className="mb-5">
+      <div className="mb-5 relative">
+        {isSearch && (
+          <div className="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none">
+            <Search aria-hidden="true" />
+          </div>
+        )}
         <input
           type={type}
           className={cn(
