@@ -12,7 +12,7 @@ const config: Config = {
       sm: ["12px", "20px"],
       md: ["13px", "19.24px"],
       base: ["15px", "22.5px"],
-      lg: ["18px", "26px"],
+      lg: ["20px", "26px"],
       xl: ["24px", "32px"],
       "2xl": ["32px", "40px"],
       "3xl": ["36px", "44px"],

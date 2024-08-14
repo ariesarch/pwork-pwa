@@ -10,7 +10,7 @@ export const useLogin = () => {
     mutationFn: login,
     onSuccess: async (data: LoginResponse) => {
       localStorage.setItem("---nmat---", data.access_token);
-      router.push("/welcome");
+      router.push("/home");
       console.log("login-data:", data);
     },
     onError: (error) => {

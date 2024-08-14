@@ -10,7 +10,12 @@ const withPWA = nextPWA({
 const nextConfig = withPWA({
   experimental: {
     images: {
-      allowFutureImage: true,
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "images.unsplash.com",
+        },
+      ],
     },
   },
   // your other Next.js config options here
