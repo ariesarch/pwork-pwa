@@ -3,12 +3,22 @@
 import nextPWA from "next-pwa";
 
 const withPWA = nextPWA({
-	dest: "public",
-	disable: process.env.NODE_ENV === "development",
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
 });
 
 const nextConfig = withPWA({
-	// your other Next.js config options here
+  experimental: {
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "images.unsplash.com",
+        },
+      ],
+    },
+  },
+  // your other Next.js config options here
 });
 
 export default nextConfig;
