@@ -7,7 +7,7 @@ import { PlayIcon } from "@radix-ui/react-icons";
 
 const ChannelHeading = () => {
   return (
-    <div className="h-[350px] w-full  relative border-b border-patchwork_black-300">
+    <div className="h-[400px] w-full relative border-b border-patchwork_black-300">
       <Image
         className="object-cover"
         fill
@@ -15,11 +15,11 @@ const ChannelHeading = () => {
         // src={
         // 	"https://images.unsplash.com/photo-1722648404131-a69c35a706fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         // }
-        src={""}
+        src={"/user-profile.jpeg"}
       />
       <div className="absolute bottom-0  left-0 right-0 px-4 bg-patchwork_black-500 h-[220px] w-full">
         <div className="flex items-center justify-between">
-          <div className="relative w-[100px] h-[90px] mt-[-30px] ">
+          <div className="relative w-[100px] h-[90px] mt-[-65px] ">
             <Image
               alt="Channel Profile Image"
               fill
@@ -27,7 +27,7 @@ const ChannelHeading = () => {
               //   src={
               //     "https://images.unsplash.com/photo-1707953907896-6424ed45e6b2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               //   }
-              src={""}
+              src={"/user-profile.jpeg"}
             />
           </div>
           <Button
@@ -52,7 +52,7 @@ const ChannelHeading = () => {
                 <Avatar key={index} className="mr-[-10px]">
                   <AvatarImage
                     className="object-cover"
-                    src="user-profile.jpeg"
+                    src="/user-profile.jpeg"
                     // src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   />
                   <AvatarFallback>CN</AvatarFallback>

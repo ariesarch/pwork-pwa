@@ -7,13 +7,13 @@ interface Props {
 }
 const ChannelCard = ({ channel }: Props) => {
   return (
-    <div className="relative rounded-lg w-[150px] h-[150px]">
+    <div className="relative rounded-lg w-[150px] h-[150px] cursor-pointer">
       {channel.isRedPointOn && (
         <div className="z-10 absolute right-[-5px] top-[-5px] w-4 h-4 border-2 border-patchwork_black-500 rounded-full bg-patchwork_red-600" />
       )}
       <Image
         fill
-        className="object-cover rounded-lg  "
+        className="object-cover rounded-lg"
         src="/user-profile.jpeg"
         alt="Channel Image"
       />

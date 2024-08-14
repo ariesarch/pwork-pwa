@@ -14,7 +14,11 @@ const AppBar = () => {
   const pathname = usePathname();
   const menus = [
     { id: 1, icon: <HomeIcon width={23} height={23} />, link: "/home" },
-    { id: 2, icon: <MagnifyingGlassIcon width={23} height={23} />, link: "/" },
+    {
+      id: 2,
+      icon: <MagnifyingGlassIcon width={23} height={23} />,
+      link: "/search",
+    },
     {
       id: 3,
       icon: <PlusIcon width={22} height={22} color="white" />,

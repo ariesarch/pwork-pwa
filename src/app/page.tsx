@@ -10,8 +10,13 @@ export default function Home() {
   const { to } = useNavigate();
   return (
     <MainLayout className="flex flex-col justify-center items-center gap-4 bg-patchwork_black-500 h-screen">
-      <LogoOnBlack />
-      <Button className="mt-5">Button</Button>
+      <div onClick={() => to("/")} className="cursor-pointer">
+        {" "}
+        <LogoOnBlack />
+      </div>
+      <Button className="mt-5" onClick={() => to("/create-account")}>
+        Create account
+      </Button>
       <Divider text="or" />
       <Button className="rounded-full space-x-3" variant="outline">
         <MastodonLogo /> <span>Sign in with Mastodon</span>

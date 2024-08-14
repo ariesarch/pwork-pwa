@@ -26,25 +26,25 @@ export const interests = [
 export const contributors: IContributor[] = [
   {
     email: "user@gmail.com",
-    image: "",
+    image: "/user-profile.jpeg",
     name: "User123",
     text: "Some description subtitle",
   },
   {
     email: "user@gmail.com",
-    image: "",
+    image: "/user-profile.jpeg",
     name: "User123",
     text: "Some description subtitle",
   },
   {
     email: "user@gmail.com",
-    image: "",
+    image: "/user-profile.jpeg",
     name: "User123",
     text: "Some description subtitle",
   },
   {
     email: "user@gmail.com",
-    image: "",
+    image: "/user-profile.jpeg",
     name: "User123",
     text: "Some description subtitle",
   },
